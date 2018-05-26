@@ -53,6 +53,7 @@ Edit ~/.vimrc, insert the configuration about ycm:
   " YouCompleteMe  
 
   set runtimepath+=~/.vim/bundle/YouCompleteMe  
+
   let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM 基于标签引擎  
   let g:ycm_collect_identifiers_from_comments_and_strings = 0 " 注释与字符串中的内容不用于补全  
   let g:syntastic_ignore_files=[".*\.py$"]  
