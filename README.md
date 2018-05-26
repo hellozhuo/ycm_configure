@@ -1,8 +1,11 @@
 How to set ycm with c-family languages (YouCompleteMe)?
 of course it support python language, donnot worry
 
+Reference:https://github.com/Valloric/YouCompleteMe#ubuntu-linux-x64
+
 Preparation:
-linux system,
+
+linux system
 Vim is at least 7.4.1578
 cmake
 python2, python3
@@ -18,6 +21,7 @@ In your ~/.vimrc(if you donot have one, create one):
 2.
 
 command in terminal:
+
   vim
   :PluginInstall
   :q
@@ -30,6 +34,7 @@ http://releases.llvm.org/download.html
 then, extract it to whatever path you like (/path/to/clang), with "lib, bin, include etc." inside this path.
 
 command in terminal:
+
   cd /path/to/another/dir 
   mkdir ycm_build
   cd ycm_build
