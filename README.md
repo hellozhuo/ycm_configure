@@ -16,7 +16,7 @@ If you feel it too complicated and trivial to compile a ycm binary with support 
 Instruction:  
   Just extract the prepared_ycm_llvm_6.0.0.tar.gz(download at https://pan.baidu.com/s/1KYOb1zmWHiLY4QruL_jqMQ key: 2pmn) into ~/.vim/bundle, optionally, partly, copy my .vimrc and .ycm_extra_conf.py if you like into ~ and your program root dir respectively, all done!  
   
-Your being here shows you are ready to comiple your own ycm, good.  
+Being here shows you are ready to comiple your own ycm, good.  
 1.  
   
 In your ~/.vimrc(if you donot have one, create one):  
