@@ -1,6 +1,11 @@
+Question1:  
 How to set ycm with c-family languages (YouCompleteMe)?  
 of course it support python language, donnot worry  
-  
+
+Question2:  
+How to add longlist (command: ll) to pdb for python2.7?  
+ 
+Question1 solution:  
 Reference: github.com/Valloric/YouCompleteMe#ubuntu-linux-x64  
   
 Preparation:  
@@ -81,3 +86,6 @@ Edit ~/.vimrc, insert the configuration about ycm:
 Edit or create your .ycm_extra_conf.py or just use mine, add it into your program root dir  
   
 That all the whistles and bells, enjoy it!  
+
+Question2 solution:  
+replace pdb.py in python2's lib with this pdb.py  
