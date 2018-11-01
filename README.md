@@ -88,4 +88,12 @@ Edit or create your .ycm_extra_conf.py or just use mine, add it into your progra
 That all the whistles and bells, enjoy it!  
 
 Question2 solution:  
-replace pdb.py in python2's lib with this pdb.py  
+replace pdb.py in python2's lib with this pdb.py<br/>  
+
+update on 1.11.2018<br/>
+when finishing the first two steps above, there is an alternative for the rest steps:<br/>
+3.<br/> 
+cd ~/.vim/bundle/YouCompleteMe<br/>
+./install.py --clang-completer<br/>
+and do step 4...
+
