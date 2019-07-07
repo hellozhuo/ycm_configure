@@ -39,7 +39,14 @@ command in terminal:
       
 now, a dir called "YouCompleteMe" will be in your ~/.vim/bundle/  
   
-3.  
+update on 1.11.2018<br/>
+when finishing the first two steps above, there is an alternative for the rest steps:<br/>
+3a.<br/> 
+cd ~/.vim/bundle/YouCompleteMe<br/>
+./install.py --clang-completer<br/>
+and do step 4...
+
+3b.  
 Download the upmost version of llvm pre-built binaries for clang at:  
 http://releases.llvm.org/download.html  
 then, extract it to whatever path you like (/path/to/clang), with "lib, bin, include etc." inside this path.  
@@ -90,10 +97,4 @@ That all the whistles and bells, enjoy it!
 Question2 solution:  
 replace pdb.py in python2's lib with this pdb.py<br/>  
 
-update on 1.11.2018<br/>
-when finishing the first two steps above, there is an alternative for the rest steps:<br/>
-3.<br/> 
-cd ~/.vim/bundle/YouCompleteMe<br/>
-./install.py --clang-completer<br/>
-and do step 4...
 
