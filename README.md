@@ -43,7 +43,7 @@ update on 1.11.2018<br/>
 when finishing the first two steps above, there is an alternative for the rest steps:<br/>
 3a.<br/> 
 cd ~/.vim/bundle/YouCompleteMe<br/>
-./install.py --clang-completer<br/>
+./install.py --clangd-completer<br/> (note that before we used --clang-completer)
 and do step 4...
 
 3b.  
