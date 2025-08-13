@@ -30,6 +30,10 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'gcmt/wildfire.vim'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/local_vimrc'
+
+Plugin 'wesQ3/vim-windowswap'
 
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'lilydjwg/fcitx.vim'
@@ -77,6 +81,7 @@ filetype plugin indent on    " required
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
+"
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -149,11 +154,17 @@ if has("autocmd")
 
   augroup END
 
+  augroup markdown
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+  augroup END
+
 else
 
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -184,7 +195,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0 " 注释与字符串
 let g:syntastic_ignore_files=[".*\.py$"]
 let g:ycm_seed_identifiers_with_syntax = 1                  " 语法关键字补全
 let g:ycm_complete_in_comments = 1
-let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']  " 映射按键, 没有这个会拦截掉tab, 导致其他插件的tab不能用.
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 let g:ycm_complete_in_comments = 1                          " 在注释输入中也能补全
@@ -192,13 +202,27 @@ let g:ycm_complete_in_strings = 1                           " 在字符串输入
 let g:ycm_collect_identifiers_from_comments_and_strings = 0 " 注释和字符串中的文字不会被收入补全
 " let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui = 0                           " 禁用语法检查
-let g:ycm_server_python_interpreter = 'python2'
-let g:ycm_python_binary_path = 'python'
+let g:ycm_server_python_interpreter = '/home/zhuo/anaconda3/envs/aibooth/bin/python'
+let g:ycm_python_binary_path = '/home/zhuo/anaconda3/envs/aibooth/bin/python'
 " let g:ycm_min_num_of_chars_for_completion=1                 " 从第1个键入字符就开始罗列匹配项
+" turn off hover info
+let g:ycm_auto_hover = ''
 let g:ycm_show_diagnostics_ui = 1
+let g:ycm_clangd_binary_path = '/usr/bin/clangd'
+let g:ycm_use_clangd = 1
+let g:ycm_confirm_extra_conf = 0
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>" |            " 回车即选中当前项
 nnoremap <c-j> :YcmCompleter GoToDefinition<CR>    " 跳转到定义处
 nnoremap <c-k> :YcmCompleter GoToDeclaration<CR>    " 跳转到声明处
+
+autocmd FileType cpp,cu setlocal omnifunc=syntaxcomplete#Complete
+
+" local_vimrc
+let g:local_vimrc = '.localvimrc'
+
+" window swap 
+" let g:windowswap_map_keys = 0 "prevent default bindings 
+
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
@@ -227,7 +251,10 @@ set ignorecase
 "set background=dark
 "colorscheme solarized
 "colorscheme molokai
-colorscheme phd
+"colorscheme phd
+"colorscheme evening
+"colorscheme ron
+colorscheme torte
 
 " 让配置变更立即生效
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -276,6 +303,8 @@ set tabstop=2
 set shiftwidth=2
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=2
+
+autocmd FileType c,cpp,h,hpp,cu,sh setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=0
